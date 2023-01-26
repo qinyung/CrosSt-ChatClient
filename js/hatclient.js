@@ -76,8 +76,8 @@ send({cmd: 'ping'})
 function join(channel, cUsername, cPassword, cServer) {
 	var myNick = cUsername + "#" + cPassword;
 	var room = channel;
-	if (cServer == "hackchat") {
-		ws = new WebSocket('wss://hack.chat/chat-ws');
+	if (cServer == "crosstchat") {
+		ws = new WebSocket('wss://crosst.chat:35197');
 	} else if (cServer == "32chat") {
 		ws = new WebSocket('ws://chat.32ch.org:80');
 	} else if (cServer == "toastychat") {
