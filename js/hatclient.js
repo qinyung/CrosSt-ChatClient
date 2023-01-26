@@ -97,9 +97,9 @@ function join(channel, cUsername, cPassword, cServer) {
 	ws.onopen = function() {
 		if (myNick) {
 			if (cServer == "toastychat") {
-				send({cmd: 'join', channel: channel, nick: cUsername, pass: cPassword})
+				send({cmd: 'join', channel: channel, nick: cUsername, password: cPassword})
 			} else {
-			send({cmd: 'join', channel: channel, nick: myNick})
+			send({cmd: 'join', channel: channel, nick: myNick, password: cPassword})
 			}
 		}
 		wasConnected = true
