@@ -97,7 +97,7 @@ function join(channel, cUsername, cPassword, cServer) {
 	ws.onopen = function() {
 		if (myNick) {
 			if (cServer == "crosstchat") {
-				send({cmd: 'join', channel: channel, nick: cUsername, password: cPassword})
+				send({cmd: 'join', channel: channel, nick: cUsername, password: cPassword, clientName: '识字街'})
 			} else {
 			send({cmd: 'join', channel: channel, nick: myNick})
 			}
