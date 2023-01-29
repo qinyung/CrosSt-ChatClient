@@ -2116,7 +2116,7 @@
 }
 
 .black {
-  background-color: #000000 !important;
+  background-color: #4493ff !important;
 }
 
 .black-text {
@@ -4986,7 +4986,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #4493ff;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
@@ -6469,8 +6469,8 @@ form p:last-child {
   top: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid #26a69a;
-  background-color: #26a69a;
+  border: 2px solid #4493ff;
+  background-color: #4493ff;
   z-index: 0;
 }
 
