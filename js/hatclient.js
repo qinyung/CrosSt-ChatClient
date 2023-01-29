@@ -68,10 +68,11 @@ function initialize() {
 var ws;
 var myNick = chatUsername + "#" + chatPass;
 
+//此处是用来保持websocket连接，但是十字街还没做好这个功能，可恶的Henrize大鸽子QAQ
 //Retain ws connection
-window.setInterval(function() {
-send({cmd: 'ping'})
-}, 50000)
+//window.setInterval(function() {
+//send({cmd: 'ping'})
+//}, 50000)
 	
 function join(channel, cUsername, cPassword, cServer) {
 	var myNick = cUsername + "#" + cPassword;
@@ -97,7 +98,7 @@ function join(channel, cUsername, cPassword, cServer) {
 	ws.onopen = function() {
 		if (myNick) {
 			if (cServer == "crosstchat") {
-				send({cmd: 'join', channel: channel, nick: cUsername, password: cPassword, clientName: '[识字街测试版](https://crosst.pages.dev)'})
+				send({cmd: 'join', channel: channel, nick: cUsername, password: cPassword, clientName: '识字街'})
 			} else {
 			send({cmd: 'join', channel: channel, nick: myNick})
 			}
@@ -142,17 +143,17 @@ var COMMANDS = {
 		nicks.forEach(function(nick) {
 			userAdd(nick)
 		})
-		pushMessage({nick: '*', text: "Users online: " + nicks.join(", ")})
+		pushMessage({nick: '*', text: "在线的用户: " + nicks.join(", ")})
 	},
 	onlineAdd: function(args) {
 		var nick = args.nick
 		userAdd(nick)
-		pushMessage({nick: '*', text: nick + " has joined the channel."})
+		pushMessage({nick: '*', text: nick + " 加入聊天室"})
 	},
 	onlineRemove: function(args) {
 		var nick = args.nick
 		userRemove(nick)
-		pushMessage({nick: '*', text: nick + " has left the channel."})
+		pushMessage({nick: '*', text: nick + " 离开聊天室"})
 	},
 }
 function userAdd(nick) {
@@ -198,7 +199,8 @@ function saveSettings() {
 }
 
 function loadTheme() {
-	//This method is stupid.
+	//Hat: This method is stupid.
+    //倾语: 我同意:D
 	var clientTheme = localStorage.getItem("theme");
 	if (clientTheme == "dark") {
 		var head = document.head;
@@ -302,7 +304,7 @@ function pushMessage(args) {
 		nickSpanEl.appendChild(tripEl)
 	} else {
 		var tripEl = document.createElement('p')
-		tripEl.innerHTML = tripEl.innerHTML + "<span style='color: grey'>No Trip</span>"
+		tripEl.innerHTML = tripEl.innerHTML + "<span style='color: grey'> </span>"
 		nickSpanEl.appendChild(tripEl)
 	}
 
