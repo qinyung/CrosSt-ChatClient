@@ -11,5 +11,5 @@
 ### 📌 todos
 - [ ] 汉化
 - [ ] 美化界面
-- [ ] 加入clientName
+- [x] 加入clientName
 - [ ] 打包各平台客户端
