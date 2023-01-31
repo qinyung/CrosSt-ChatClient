@@ -268,6 +268,14 @@ function pushMessage(args) {
 		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle black">star</i>'
 		args.nick = args.nick + ' <b style="background:#4493ff;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">通知</b>';
 	}
+	else if (args.nick == 'bo_od') {
+		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle black">smart_toy</i>'
+		args.nick = args.nick + ' <b style="background:#4493ff;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">Bot</b>';
+	}
+	else if (args.nick == 'do_ob') {
+		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle black">smart_toy</i>'
+		args.nick = args.nick + ' <b style="background:#4493ff;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">Bot</b>';
+	}
 	else if (args.admin) {
 		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle red">admin_panel_settings</i>'
 		args.nick = args.nick + ' <b style="background:red;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">管理员</b>';
