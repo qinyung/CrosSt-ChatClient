@@ -98,7 +98,7 @@ function join(channel, cUsername, cPassword, cServer) {
 	ws.onopen = function() {
 		if (myNick) {
 			if (cServer == "crosstchat") {
-				send({cmd: 'join', channel: channel, nick: cUsername, password: cPassword, clientName: '识字街'})
+				send({cmd: 'join', channel: channel, nick: cUsername, password: cPassword, clientName: '[识字街](https://github.com/qinyung/CrosSt-ChatClient)'})
 			} else {
 			send({cmd: 'join', channel: channel, nick: myNick})
 			}
@@ -275,11 +275,11 @@ function pushMessage(args) {
 	}
 	else if (args.admin) {
 		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle red">verified_user</i>'
-		args.nick = args.nick + ' <b style="background:red;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">ADMIN</b>';
+		args.nick = args.nick + ' <b style="background:red;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">管理员</b>';
 	}
-	else if (args.mod) {
+	else if (args.member) {
 		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle green">verified_user</i>'
-		args.nick = args.nick + ' <b style="background:#4CAF50;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">MOD</b>';
+		args.nick = args.nick + ' <b style="background:#4CAF50;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">成员</b>';
 	} else if (args.trip == "15aMxC") {
 		messageEl.innerHTML = messageEl.innerHTML + '<img src="img/hat.png" alt="" class="circle">'
 		args.nick = args.nick + ' <b style="background:black;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">HatClient Creator</b>';
