@@ -259,22 +259,17 @@ function pushMessage(args) {
 	messageEl.classList.add('collection-item')
 	messageEl.classList.add('avatar')
 
-	if (args.nick == chatUsername) {
-		messageEl.classList.add('me')
-		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle black">mood</i>'
-		args.nick = args.nick + ' <b style="background:#E5E5E5;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">YOU</b>';
-	}
-	else if (args.nick == '!') {
+	if (args.nick == '!') {
 		messageEl.classList.add('warn')
 		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle orange">error_outline</i>'
-		args.nick = args.nick + ' <b style="background:orange;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">SERVER</b>';
+		args.nick = args.nick + ' <b style="background:orange;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">警告</b>';
 	}
 	else if (args.nick == '*') {
 		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle black">star</i>'
-		args.nick = args.nick + ' <b style="background:black;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">SERVER</b>';
+		args.nick = args.nick + ' <b style="background:#4493ff;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">通知</b>';
 	}
 	else if (args.admin) {
-		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle red">verified_user</i>'
+		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle red">admin_panel_settings</i>'
 		args.nick = args.nick + ' <b style="background:red;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">管理员</b>';
 	}
 	else if (args.member) {
@@ -284,7 +279,7 @@ function pushMessage(args) {
 		messageEl.innerHTML = messageEl.innerHTML + '<img src="img/hat.png" alt="" class="circle">'
 		args.nick = args.nick + ' <b style="background:black;padding:2px;padding-left:5px;padding-right:5px;border-radius:3px;color:white;margin-left:5px;">HatClient Creator</b>';
 	} else {
-		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle">chat</i>'
+		messageEl.innerHTML = messageEl.innerHTML + '<i id="userimage" class="material-icons circle">person</i>'
 	}
 
 	// Nickname
